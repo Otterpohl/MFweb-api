@@ -1,9 +1,10 @@
 """users routes"""
 from flask import current_app as app, jsonify
+from flask_cors import cross_origin
 from models import Training
 
 @app.route('/training/<user_id>', methods=['GET'])
-
+@cross_origin()
 def get_training(user_id):
 
     query = Training.query.filter(Training.UserNo==user_id)

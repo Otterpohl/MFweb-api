@@ -1,5 +1,6 @@
 """users routes"""
 from flask import current_app as app, jsonify, request
+from flask_cors import cross_origin
 from models import Task, BaseObject, db
 from collections import OrderedDict
 import numpy as np
@@ -8,7 +9,7 @@ import glob
 
 
 @app.route('/task/<task_no>/<block_no>', methods=['GET'])
-
+@cross_origin()
 def get_task(task_no,block_no):
 
     query = Task.query.filter(Task.TaskNo==task_no, Task.BlockNo==block_no)

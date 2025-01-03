@@ -1,11 +1,12 @@
 """users routes"""
 from flask import current_app as app, jsonify, request
+from flask_cors import cross_origin
 from models import QuestionnairesBehaviour, BaseObject, db
 from sqlalchemy.sql.expression import func
 
 
 @app.route('/questionnaires_behaviour/<user_id>', methods=['POST', 'GET'])
-
+@cross_origin()
 def create_questionnaires_behaviour(user_id):
 
     content                               = request.json

@@ -1,9 +1,11 @@
 """users routes"""
 from flask import current_app as app, jsonify, request
+from flask_cors import cross_origin
 from models import QuestionsBehaviour, BaseObject, db
 from sqlalchemy.sql.expression import func
 
 @app.route("/questions_behaviour/last_user_no", methods=["GET"])
+@cross_origin()
 def get_last_participant_id():
 
     query  = db.db.session.query(func.max(QuestionsBehaviour.UserNo)).first_or_404()
@@ -17,7 +19,7 @@ def get_last_participant_id():
     return jsonify(result)
 
 @app.route('/questions_behaviour/<user_id>', methods=['POST', 'GET'])
-
+@cross_origin()
 def create_questions_behaviour(user_id):
 
     content                          = request.json

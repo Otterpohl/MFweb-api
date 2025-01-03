@@ -1,10 +1,11 @@
 """users routes"""
 from flask import current_app as app, jsonify, request
+from flask_cors import cross_origin
 from models import TrainingBehaviour, BaseObject
 
 
 @app.route('/training_behaviour/<user_id>', methods=['POST', 'GET'])
-
+@cross_origin()
 def create_training_behaviour(user_id):
 
     content                         = request.json

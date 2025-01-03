@@ -1,10 +1,11 @@
 """users routes"""
 from flask import current_app as app, jsonify, request
+from flask_cors import cross_origin
 from models import Behaviour, BaseObject
 
 
 @app.route('/behaviour/<user_id>/<blockNo>', methods=['POST', 'GET'])
-
+@cross_origin()
 def create_behaviour(user_id, blockNo):
 
     content     = request.json
