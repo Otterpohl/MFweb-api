@@ -1,5 +1,5 @@
 """User model"""
-from sqlalchemy import Column, Integer, String, ARRAY, Text
+from sqlalchemy import Column, Integer, String, ARRAY
 
 from models.db import Model
 from models.base_object import BaseObject
@@ -10,28 +10,28 @@ class Behaviour(BaseObject, Model):
     id = Column(Integer, primary_key=True)
 
     UserNo                = Column(Integer)
-    ProlificID            = Column(Text(length=10000))
-    TaskNo                = Column(Text(length=10000))
-    TrainingNo            = Column(Text(length=10000))
-    Date                  = Column(Text(length=10000))
-    UserStartTime         = Column(Text(length=10000))
+    ProlificID            = Column(String(length=10000))
+    TaskNo                = Column(String(length=10000))
+    TrainingNo            = Column(String(length=10000))
+    Date                  = Column(String(length=10000))
+    UserStartTime         = Column(String(length=10000))
     BlockNo               = Column(Integer)
-    InfoRequestNo         = Column(Text(length=10000))
-    BlockStartTime        = Column(Text(length=10000))
-    BlockFinishTime       = Column(Text(length=10000))
-    TreeColours           = Column(Text(length=10000))
-    ChosenTree            = Column(Text(length=10000))
-    ChosenAppleSize       = Column(Text(length=10000))
-    AllKeyPressed         = Column(Text(length=10000))
-    ReactionTimes         = Column(Text(length=10000))
-    Horizon               = Column(Text(length=10000))
-    ItemNo                = Column(Text(length=10000))
-    TrialNo               = Column(Text(length=10000))
-    UnusedTree            = Column(Text(length=10000))
-    InitialSamplesNb      = Column(Text(length=10000))
-    InitialSamplesTree    = Column(Text(length=10000))
-    InitialSamplesSize    = Column(Text(length=10000))
-    TreePositions         = Column(Text(length=10000))
+    InfoRequestNo         = Column(String(length=10000))
+    BlockStartTime        = Column(String(length=10000))
+    BlockFinishTime       = Column(String(length=10000))
+    TreeColours           = Column(String(length=10000))
+    ChosenTree            = Column(String(length=10000))
+    ChosenAppleSize       = Column(String(length=10000))
+    AllKeyPressed         = Column(String(length=10000))
+    ReactionTimes         = Column(String(length=10000))
+    Horizon               = Column(String(length=10000))
+    ItemNo                = Column(String(length=10000))
+    TrialNo               = Column(String(length=10000))
+    UnusedTree            = Column(String(length=10000))
+    InitialSamplesNb      = Column(String(length=10000))
+    InitialSamplesTree    = Column(String(length=10000))
+    InitialSamplesSize    = Column(String(length=10000))
+    TreePositions         = Column(String(length=10000))
 
 
     def get_id(self):

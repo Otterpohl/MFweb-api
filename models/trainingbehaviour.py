@@ -1,5 +1,5 @@
 """User model"""
-from sqlalchemy import Column, Integer, String, ARRAY, Text
+from sqlalchemy import Column, Integer, String, ARRAY
 
 from models.db import Model
 from models.base_object import BaseObject
@@ -10,21 +10,21 @@ class TrainingBehaviour(BaseObject, Model):
     id = Column(Integer, primary_key=True)
 
     UserNo              = Column(Integer)
-    ProlificID          = Column(Text(length=10000))
-    TrainingNo          = Column(Text(length=10000))
-    TaskNo              = Column(Text(length=10000))
-    Date                = Column(Text(length=10000))
-    UserStartTime       = Column(Text(length=10000))
-    TrainingStartTime   = Column(Text(length=10000))
-    TrainingFinishTime  = Column(Text(length=10000))
-    SumPassed           = Column(Text(length=10000))
-    ChoicesSize         = Column(Text(length=10000))
-    InitialSamplesSize  = Column(Text(length=10000))
-    ReactionTimes       = Column(Text(length=10000))
-    ChoicesCorrect      = Column(Text(length=10000))
-    Chosen              = Column(Text(length=10000))
-    CorrectAns          = Column(Text(length=10000))
-    NumTraining         = Column(Text(length=10000))
+    ProlificID          = Column(String(length=10000))
+    TrainingNo          = Column(String(length=10000))
+    TaskNo              = Column(String(length=10000))
+    Date                = Column(String(length=10000))
+    UserStartTime       = Column(String(length=10000))
+    TrainingStartTime   = Column(String(length=10000))
+    TrainingFinishTime  = Column(String(length=10000))
+    SumPassed           = Column(String(length=10000))
+    ChoicesSize         = Column(String(length=10000))
+    InitialSamplesSize  = Column(String(length=10000))
+    ReactionTimes       = Column(String(length=10000))
+    ChoicesCorrect      = Column(String(length=10000))
+    Chosen              = Column(String(length=10000))
+    CorrectAns          = Column(String(length=10000))
+    NumTraining         = Column(String(length=10000))
 
 
     def get_id(self):
