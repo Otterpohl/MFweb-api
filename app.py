@@ -23,8 +23,8 @@ app  = Flask(__name__)
 # --- DB configuration ----
 # -------------------------
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-#app.config['SQLALCHEMY_DATABASE_URI'] = config.get('Database Parameters','database_url')
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = config.get('Database Parameters','database_url')
 
 db.init_app(app)
 CORS(app)
@@ -48,5 +48,4 @@ def mytest():
 
 if __name__ == '__main__':
     print("Starting webserver.")
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port,debug=False)
+    app.run(host="0.0.0.0", port=5000,debug=False)
